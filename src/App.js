@@ -12,11 +12,23 @@ import './css/Profile.css'
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pumpkinsList: {},
+      userInfos: {}
+    };
+  }
+
+  updatePumpkinsList (pumpkinsList) {
+    this.setState({
+      pumpkinsList
+    })
+  }
 
   render() {
     return (
       <div>
-
         <Dex />
         <Geolocation
           render={({
@@ -34,6 +46,7 @@ class App extends Component {
                 <MapLayer
                   isUserLocated={isUserLocated}
                   userPosition={userPosition}
+                  updatePumpkinsList={this.updatePumpkinsList}
                 />
               </div>
             );
