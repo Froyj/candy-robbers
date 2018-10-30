@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
-import { Navbar } from 'reactstrap';
+// import Menu from './Menu.js';
 
 import './App.css';
 
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar
+        {/* <Menu /> */}
         <WelcomePage />
       </div>
     );
