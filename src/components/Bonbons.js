@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/Dex.css';
-import checkON from './checkON.png'
-import checkOFF from './checkOFF.png'
+import '../css/Dex.css';
+import checkON from '../checkON.png'
+import checkOFF from '../checkOFF.png'
 
 class Bonbons extends Component {
   constructor(props) {
