@@ -7,12 +7,29 @@ import Dex from './components/Dex';
 import Geolocalisation from './components/Geolocalisation';
 
 import './App.css';
+import './css/Map.css';
+import './css/Profile.css'
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pumpkinsList: {},
+      userInfos: {}
+    };
+  }
+
+  updatePumpkinsList () {
+    const pumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
+    this.setState({
+      pumpkinsList
+    })
+  }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" onLoad={() => this.updatePumpkinsList()}>
         <div>
           <Menu />
         </div>

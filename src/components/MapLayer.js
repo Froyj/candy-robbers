@@ -24,18 +24,22 @@ class MapLayer extends Component<
   constructor(props) {
     super(props);
     this.state = {
-      startCenter: defaultCenter.center,
-      zoom: defaultZoom
+      startCenter : defaultCenter.center,
+      zoom: defaultZoom,
+      pumpkins: []
     };
     this.centerOnUser = this.centerOnUser.bind(this);
   }
 
-  clearError() {
-    this.setState({ apiDataError: null });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
+  componentDidMount() {
+    if (!localStorage.getItem('pumpkins')) {
+      localStorage.setItem('pumpkins', JSON.stringify([]));
+    }
+    const pumpkins = require('../pumpkins.json'); 
+    localStorage.setItem('pumpkins', JSON.stringify(pumpkins));
+    this.setState(
+      pumpkins
+    )
   }
 
   centerOnUser(userPosition) {
@@ -47,12 +51,13 @@ class MapLayer extends Component<
     })
   }
 
+
   render() {
-    const { userPosition, isUserLocated } = this.props
+    const { userPosition, isUserLocated, updatePumpkinsList } = this.props
     const { zoom, viewport } = this.state;
 
     return (
-      <div id="map" className="map-container">
+      <div id="map" className="map-container" onLoad={() => updatePumpkinsList(this.state.pumpkins)}>
         <Map
           className="map__reactleaflet"
           center={defaultCenter}
