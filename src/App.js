@@ -20,6 +20,14 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    if (!localStorage.getItem('pumpkins')) {
+      localStorage.setItem('pumpkins', JSON.stringify([]));
+    }
+    const pumpkins = require('./pumpkins.json'); 
+    localStorage.setItem('pumpkins', JSON.stringify(pumpkins));
+  }
+
   updatePumpkinsList () {
     const pumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
     this.setState({
@@ -27,15 +35,35 @@ class App extends Component {
     })
   }
 
+  addPumpkin () {
+    const pumpkin = {
+      "id": 8,
+      "isOpen": false,
+      "position": {lat: 43.60482, lng: 1.44728},
+       "reward": ["Caramel pourri", "80 points"]
+    }
+    if (!localStorage.getItem('pumpkins')) {
+      localStorage.setItem('pumpkins', JSON.stringify([]));
+    }
+    const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
+    localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
+  }
+
   render() {
+    const { pumpkinsList } = this.state;
     return (
-      <div className="App" onLoad={() => this.updatePumpkinsList()}>
+      <div 
+        className="App"
+        onLoad={() => {
+          this.updatePumpkinsList();
+        }
+      }>
         <div>
           <Menu />
         </div>
         <div>
           <Route path="/" exact component={WelcomePage}/>
-          <Route path="/map" exact component={Geolocalisation}/>
+          <Route path="/map" exact render={(props) => <Geolocalisation {...props} pumpkinsList={pumpkinsList}/>}/>
           <Route path="/myprofile" exact component={Profile}/>
           <Route path="/mycandydex" exact component={Dex}/>
         </div>  

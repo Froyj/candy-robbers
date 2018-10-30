@@ -1,43 +1,40 @@
 import React, { Component } from 'react';
-
-import {
-  Map, TileLayer, type Viewport
-} from 'react-leaflet';
-
-import UserMarker from './UserMarker'
+import ReactDOMServer from 'react-dom/server';
+import L from 'leaflet';
+import { Marker } from 'react-leaflet';
+import pumpkinIcon from '../icons/pumpkin.png';
 
 
 import '../css/Map.css';
 
-
-const defaultCenter = [43.599761799999996, 1.443197];
-const defaultZoom = 15;
-
-class PumpkinsLayer extends Component<
-  {},
-  { viewport: Viewport },
-  > {
-  state = {
-    viewport: defaultCenter,
+class PumpkinsLayer extends Component {
+  
+  readStoredPumpkins() {
+    const pumpkins = JSON.parse(localStorage.getItem('pumpkins'));
+    return pumpkins || [];
   }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      startCenter : defaultCenter.center,
-      zoom: defaultZoom
-    };
-    this.centerOnUser = this.centerOnUser.bind(this);
-  }
-
 
   render() {
-    const { userPosition, isUserLocated } = this.props
-    const { zoom, viewport } = this.state;
+    const pumpkinsList = this.readStoredPumpkins();
+    console.log(pumpkinsList);
+    
+    const allPumpkins = pumpkinsList.map(pumpkin => (
+      <Marker
+        icon={L.divIcon({
+          className: 'custom-icon',
+          html: ReactDOMServer.renderToString(
+            <img src={pumpkinIcon} alt="citrouille" style={{width: "40px", height:"40px"}}/>
+          ),
+          iconSize: [40, 40]
+        })}
+        position={[pumpkin.position.lat, pumpkin.position.lng]}
+        key={`marker_${pumpkin.id}`}
+      />
+    ));
 
     return (
       <div id="map" className="map-container">
-        
+        {allPumpkins}
       </div>
     );
   }

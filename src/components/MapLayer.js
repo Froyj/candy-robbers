@@ -8,6 +8,7 @@ import UserMarker from './UserMarker'
 
 
 import '../css/Map.css';
+import PumpkinsLayer from './PumpkinsLayer';
 
 
 const defaultCenter = [43.599761799999996, 1.443197];
@@ -31,17 +32,6 @@ class MapLayer extends Component<
     this.centerOnUser = this.centerOnUser.bind(this);
   }
 
-  componentDidMount() {
-    if (!localStorage.getItem('pumpkins')) {
-      localStorage.setItem('pumpkins', JSON.stringify([]));
-    }
-    const pumpkins = require('../pumpkins.json'); 
-    localStorage.setItem('pumpkins', JSON.stringify(pumpkins));
-    this.setState(
-      pumpkins
-    )
-  }
-
   centerOnUser(userPosition) {
     this.setState({
       viewport: {
@@ -53,7 +43,7 @@ class MapLayer extends Component<
 
 
   render() {
-    const { userPosition, isUserLocated, updatePumpkinsList } = this.props
+    const { userPosition, isUserLocated, pumpkinsList, updatePumpkinsList } = this.props
     const { zoom, viewport } = this.state;
 
     return (
@@ -70,6 +60,9 @@ class MapLayer extends Component<
           <UserMarker
             userPosition={userPosition}
             isUserLocated={isUserLocated}
+          />
+          <PumpkinsLayer
+            pumpkinsList={pumpkinsList}
           />
         </Map>
 
