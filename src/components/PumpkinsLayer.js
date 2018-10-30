@@ -8,10 +8,37 @@ import pumpkinIcon from '../icons/pumpkin.png';
 import '../css/Map.css';
 
 class PumpkinsLayer extends Component {
-  
+  constructor (props) {
+    super(props);
+    this.state = {
+      pumpkinsList: props.pumpkinsList
+    }
+  }
+
   readStoredPumpkins() {
     const pumpkins = JSON.parse(localStorage.getItem('pumpkins'));
     return pumpkins || [];
+  }
+
+  openPumpkin(pumpkin) {
+    const newPumpkin = {...pumpkin, isOpen:true};
+    const pumpkinsList = this.state.pumpkinsList.map(pumpkin =>
+      pumpkin.id === newPumpkin.id ? newPumpkin : pumpkin
+    );
+    this.setState({
+      pumpkinsList
+    })
+    this.props.updatePumpkinsList(pumpkinsList);
+  }
+
+  handleClickPumpkin (pumpkin) {
+    if (Math.abs(this.props.userPosition[0] - pumpkin.position.lat) < 0.0004 
+    && Math.abs(this.props.userPosition[1] - pumpkin.position.lng) < 0.0004) {
+      this.openPumpkin(pumpkin);
+    } else {
+      console.log('trop loin')
+      console.log(`user lat :${this.props.userPosition[0]} user lng :${this.props.userPosition[1]}`)
+    }
   }
 
   render() {
@@ -29,6 +56,7 @@ class PumpkinsLayer extends Component {
         })}
         position={[pumpkin.position.lat, pumpkin.position.lng]}
         key={`marker_${pumpkin.id}`}
+        onClick={() => this.handleClickPumpkin(pumpkin)}
       />
     ));
 

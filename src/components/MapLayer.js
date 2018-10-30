@@ -63,6 +63,8 @@ class MapLayer extends Component<
           />
           <PumpkinsLayer
             pumpkinsList={pumpkinsList}
+            updatePumpkinsList={updatePumpkinsList}
+            userPosition={userPosition}
           />
         </Map>
 
