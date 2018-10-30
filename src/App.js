@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
 import Menu from './components/Menu';
 import { Route } from 'react-router-dom';
-import Geolocation from 'react-geolocation'
-import MapLayer from './components/MapLayer'
+import Geolocation from 'react-geolocation';
+import MapLayer from './components/MapLayer';
+import Profile from './components/Profile';
 
 import './App.css';
 import './css/Map.css';
@@ -14,11 +15,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu />
         <div>
-          <Route path="/" exact component={}/>  
-
-            {/* debut appel geoloc */}
+          <Menu />
+        </div>
+        <div>
+          <Route path="/" exact render={(props)=> 
               <Geolocation
                 render={({
                   fetchingPosition,
@@ -39,9 +40,10 @@ class App extends Component {
                   );
                 }
               }
-              />
-            {/* fin appel geoloc */}
-        </div>
+            />}
+          />
+          <Route path="/profile" exact component={Profile}/>
+        </div>  
       </div>
     );
   }
