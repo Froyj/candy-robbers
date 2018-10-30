@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/Dex.css';
+import '../css/Dex.css';
 import checkON from './checkON.png'
 import checkOFF from './checkOFF.png'
 
