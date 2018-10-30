@@ -1,0 +1,90 @@
+{
+  "pumpkins": [
+    {
+      "id": 1,
+      "position": {
+        "lat": 43.60329,
+        "lng": 1.443412
+      },
+      "reward": [
+        "Devil sucette",
+        "50 points"
+      ],
+      "isOpen": false
+    },
+    {
+      "id": 2,
+      "position": {
+        "lat": 43.599988,
+        "lng": 1.442882
+      },
+      "reward": [
+        "Caramel pourri",
+        "Suce limace",
+        "100 points"
+      ],
+      "isOpen": false
+    },
+    {
+      "id": 3,
+      "position": {
+        "lat": 43.604820,
+        "lng": 1.447280
+      },
+      "reward": [
+        "Caramel pourri",
+        "80 points"
+      ],
+      "isOpen": false
+    },
+    {
+      "id": 4,
+      "position": {
+        "lat": 43.604516,
+        "lng": 1.439538
+      },
+      "reward": [
+        "Suce limace",
+        "50 points"
+      ],
+      "isOpen": false
+    },
+    {
+      "id": 5,
+      "position": {
+        "lat": 43.598051,
+        "lng": 1.431805
+      },
+      "reward": [
+        "Devil sucette",
+        "Caramel pourri",
+        "200 points"
+      ],
+      "isOpen": true
+    },
+    {
+      "id": 6,
+      "position": {
+        "lat": 43.601353,
+        "lng": 1.439101
+      },
+      "reward": [
+        "Suce limace",
+        "30 points"
+      ],
+      "isOpen": false
+    },
+    {
+      "id": 7,
+      "position": {
+        "lat": 43.597188,
+        "lng": 1.447995
+      },
+      "reward": [
+        "Glace vomi",
+        "60 points"
+      ],
+      "isOpen": true
+    }
+  ]
+}
