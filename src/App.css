@@ -1,23 +1,49 @@
 /* Jumbotron */
 
-.logo {
+h1.logo {
   font-family: 'Creepster', cursive;
   font-size: 7rem;
   color: black;
-  align-content: center
+  text-align: center
 };
 
-.jumbotron-fluid {
+div.jumbotron-fluid {
+  padding: 0;
+  margin : 0;
+}
+div.container-fluid {
   padding: 0;
   margin : 0;
 }
 
-.jumbotron {
+div.jumbotron {
   padding: 0;
   margin : 0;
 }
 
-.wlcbutton {
+a.wlcbutton {
   color: orangered;
-  font-weight: bold
+  font-weight: bold;
+  font-size: 2.5rem;
+  background: black;
+  font-family: 'Creepster', cursive;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+p.wlcwrapper {
+  text-align: center;
+}
+.card {
+  border : 0px;
+}
+
+/*Menu*/
+.navbar {
+  font-family: 'Creepster', cursive;
+}
+a.navbar-brand {
+  font-size: 2.5rem;
+}
+a.nav-link {
+  font-size: 1.5rem;
 }

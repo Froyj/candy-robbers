@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Collapse,
   Navbar,
@@ -7,8 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink, } from 'reactstrap';
-import '../App.css';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 class Menu extends Component {
   
@@ -27,16 +27,16 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <Navbar color="warning" light expand="md">
-          <NavbarBrand to="/" tag={Link}>the Candy Robbers</NavbarBrand>
+        <Navbar color="warning" light expand="md" className="py-3">
+          <NavbarBrand to="" tag={Link}>the Candy Robbers</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink to="" tag={Link}>Profil</NavLink>
+                <NavLink to="/myprofile" tag={Link}>Profil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="" tag={Link}>Bonbons</NavLink>
+                <NavLink to="/mycandydex" tag={Link}>Bonbons</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

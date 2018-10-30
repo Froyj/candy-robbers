@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Geolocation from 'react-geolocation';
 import MapLayer from './components/MapLayer';
 import Profile from './components/Profile';
+import Dex from './components/Dex';
 
 import './App.css';
 import './css/Map.css';
@@ -42,7 +43,10 @@ class App extends Component {
               }
             />}
           />
-          <Route path="/profile" exact component={Profile}/>
+          <Route path="/myprofile" exact component={Profile}/>
+          <Route path="/mycandydex" exact component={Dex}/>
+          <Route path="/welcome" exact component={WelcomePage}/>
+
         </div>  
       </div>
     );
