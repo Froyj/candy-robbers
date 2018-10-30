@@ -1,26 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+
+
+import Geolocation from 'react-geolocation'
+import MapLayer from './components/MapLayer'
+
 import './App.css';
+import './css/Map.css';
+
+
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+
+      <Geolocation
+        render={({
+          fetchingPosition,
+          position: { coords: { latitude, longitude } = {} } = {},
+          error,
+          getCurrentPosition
+        }) => {
+          const isUserLocated = latitude && longitude;
+          const userPosition = isUserLocated ? [latitude, longitude] : [];
+          console.log(`fetching ${fetchingPosition} position: ${latitude}, ${longitude}`)
+          return (
+            <div className="App container-fluid">
+              <MapLayer 
+                isUserLocated={isUserLocated}
+                userPosition={userPosition}
+              />
+            </div>
+          );
+        }}
+      />
     );
   }
 }
