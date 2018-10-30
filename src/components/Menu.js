@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 class Menu extends Component {
   
@@ -31,15 +32,15 @@ class Menu extends Component {
     return (
       <div>
         <Navbar color="warning" light expand="md">
-          <NavbarBrand href="/" className="logo">the Candy Robbers</NavbarBrand>
+          <NavbarBrand to="/" tag={Link} className="logo">the Candy Robbers</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Profil</NavLink>
+                <NavLink to="/profile" tag={Link}>Profil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Bonbons</NavLink>
+                <NavLink to="/candylist" tag={Link}>Bonbons</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
