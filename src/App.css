@@ -16,11 +16,6 @@ div.container-fluid {
   margin : 0;
 }
 
-div.jumbotron {
-  padding: 0;
-  margin : 0;
-}
-
 a.wlcbutton {
   color: orangered;
   font-weight: bold;
@@ -34,7 +29,15 @@ p.wlcwrapper {
   text-align: center;
 }
 .card {
-  border : 0px;
+  border: 1px solid #333333;
+}
+
+.position-bouton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 40%;
+  left: 50%
 }
 
 /*Menu*/
@@ -42,7 +45,7 @@ p.wlcwrapper {
   font-family: 'Creepster', cursive;
 }
 a.navbar-brand {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 a.nav-link {
   font-size: 1.5rem;

@@ -24,7 +24,7 @@ class MapLayer extends Component<
   constructor(props) {
     super(props);
     this.state = {
-      startCenter : defaultCenter.center,
+      startCenter: defaultCenter.center,
       zoom: defaultZoom
     };
     this.centerOnUser = this.centerOnUser.bind(this);
@@ -67,7 +67,7 @@ class MapLayer extends Component<
             isUserLocated={isUserLocated}
           />
         </Map>
-        
+
       </div>
     );
   }
