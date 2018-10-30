@@ -21,7 +21,8 @@ class App extends Component {
     };
   }
 
-  updatePumpkinsList (pumpkinsList) {
+  updatePumpkinsList () {
+    const pumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
     this.setState({
       pumpkinsList
     })
@@ -29,7 +30,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" onLoad={() => this.updatePumpkinsList()}>
         <div>
           <Menu />
         </div>

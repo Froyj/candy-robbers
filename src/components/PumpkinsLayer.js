@@ -30,16 +30,6 @@ class PumpkinsLayer extends Component<
     this.centerOnUser = this.centerOnUser.bind(this);
   }
 
-  
-
-  centerOnUser(userPosition) {
-    this.setState({
-      viewport: {
-        center: userPosition,
-        zoom: 15
-      }
-    })
-  }
 
   render() {
     const { userPosition, isUserLocated } = this.props
