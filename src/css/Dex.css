@@ -1,0 +1,17 @@
+h3 {
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.bonbon-nom {
+    font-family: 'Creepster', cursive;
+    color: white;
+    font-size: 6vw;
+}
+
+.barre {
+    color: white;
+    text-align: center;
+}

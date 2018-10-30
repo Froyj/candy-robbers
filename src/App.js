@@ -10,7 +10,6 @@ import Dex from './components/Dex';
 import './App.css';
 import './css/Map.css';
 
-
 class App extends Component {
 
   render() {
@@ -49,6 +48,28 @@ class App extends Component {
 
         </div>  
       </div>
+
+      // <Dex />
+      // <Geolocation
+      //   render={({
+      //     fetchingPosition,
+      //     position: { coords: { latitude, longitude } = {} } = {},
+      //     error,
+      //     getCurrentPosition
+      //   }) => {
+      //     const isUserLocated = latitude && longitude;
+      //     const userPosition = isUserLocated ? [latitude, longitude] : [];
+      //     console.log(`fetching ${fetchingPosition} position: ${latitude}, ${longitude}`)
+      //     return (
+      //       <div className="App container-fluid">
+      //         <MapLayer 
+      //           isUserLocated={isUserLocated}
+      //           userPosition={userPosition}
+      //         />
+      //       </div>
+      //     );
+      //   }}
+      // />
     );
   }
 }
