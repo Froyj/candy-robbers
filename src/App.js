@@ -3,7 +3,7 @@ import WelcomePage from './components/WelcomePage';
 import Menu from './components/Menu';
 import { Route } from 'react-router-dom';
 import Profile from './components/Profile';
-import Dex from './Dex';
+import Dex from './components/Dex';
 import Geolocalisation from './components/Geolocalisation';
 
 import './App.css';
