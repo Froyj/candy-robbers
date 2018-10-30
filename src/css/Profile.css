@@ -1,0 +1,41 @@
+.user-infos {
+  border-radius: 5px;
+  border: 2px solid orange;
+  padding: 1rem;
+  margin: 0.5rem;
+  color: orange;
+}
+
+.user-infos a {
+  display: block;
+}
+
+.user-infos img {
+  height: 150px;
+  width: 150px;
+}
+
+.distinctions {
+  border: 2px solid orange;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: #484848;
+  color: orange;
+}
+
+
+.distinctions h3 {
+  font-size: 1.2rem;
+}
+
+.distinctions h4 {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.distinctions img {
+  height: 40px;
+  width: 40px;
+  margin-right: 2rem;
+}

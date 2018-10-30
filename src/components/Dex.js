@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Bonbons from './Bonbons';
-import dataBonbons from './dataBonbons.json';
+import dataBonbons from '../dataBonbons.json';
 import '../css/Dex.css'
 
 class Dex extends Component {
