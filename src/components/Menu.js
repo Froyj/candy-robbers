@@ -6,12 +6,13 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink, } from 'reactstrap';
+  NavLink,
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
 class Menu extends Component {
-  
+
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -33,10 +34,13 @@ class Menu extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink to="/myprofile" tag={Link}>Profil</NavLink>
+                <NavLink to="/map" tag={Link}>Carte</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/mycandydex" tag={Link}>Bonbons</NavLink>
+                <NavLink to="/mycandydex" tag={Link}>Mes bonbons</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/myprofile" tag={Link}>Profil</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

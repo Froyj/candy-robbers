@@ -12,7 +12,7 @@ const WelcomePage = (props) => {
         <CardImgOverlay>
           <CardTitle><h1 className="logo">the Candy Robbers</h1></CardTitle>
           <CardText className="wlcwrapper">
-          <Button to="/" tag={Link} size="lg" className="wlcbutton">TOC TOC TOC</Button>   
+          <Button to="/map" tag={Link} size="lg" className="wlcbutton">TOC TOC TOC</Button>   
           </CardText>
         </CardImgOverlay>
       </Card>
