@@ -29,6 +29,7 @@ class PumpkinsLayer extends Component {
       pumpkinsList
     })
     this.props.updatePumpkinsList(pumpkinsList);
+    this.props.getLoot(pumpkin);
   }
 
   handleClickPumpkin (pumpkin) {
