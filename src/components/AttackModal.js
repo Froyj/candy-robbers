@@ -11,7 +11,7 @@ class AttackModal extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body text-center">
-                <p>Bravo, vous avez gagné une récompense</p>
+                <p>Vous avez bolossé un autre chasseur de bonbons ! Vous avez gagné 200 points et il en a perdu 200 point</p>
                 <button type="button" data-dismiss="modal" onClick={clearAttackAlert}>Fermer</button>
               </div>
             </div>
@@ -26,7 +26,7 @@ class AttackModal extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body">
-                <p>Vous êtes trop loin pour recuperer cette récompense</p>
+                <p>Vous êtes trop loin pour attaquer ce joueur</p>
                 <button type="button" data-dismiss="modal" onClick={clearAttackAlert}>Fermer</button>
               </div>
             </div>

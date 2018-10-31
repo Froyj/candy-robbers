@@ -24,7 +24,7 @@ class EnemiesLayer extends Component {
     return enemies || [];
   }
 
-  attackEnemie(enemy) {
+  attackEnemy(enemy) {
     const newEnemy = {...enemy};
     const enemiesList = this.state.enemiesList.map(enemie =>
       enemie.id === newEnemy.id ? newEnemy : enemy
@@ -33,18 +33,19 @@ class EnemiesLayer extends Component {
       enemiesList
     })
     this.props.updateEnemiesList(enemiesList);
+    this.props.getEnemyLoot(enemy);
   }
 
-  handleClickEnemie (enemy) {
+  handleClickEnemy (enemy) {
     if (Math.abs(this.props.userPosition[0] - enemy.position.lat) < 0.0004 
     && Math.abs(this.props.userPosition[1] - enemy.position.lng) < 0.0004) {
       this.attackEnemy(enemy);
       this.setState({
-        lootAlert: 'ok'
+        attackAlert: 'ok'
       })
     } else {
       this.setState({
-        lootAlert: 'trop loin'
+        attackAlert: 'trop loin'
       })
       console.log('trop loin')
       console.log(`user lat :${this.props.userPosition[0]} user lng :${this.props.userPosition[1]}`)
@@ -72,8 +73,8 @@ class EnemiesLayer extends Component {
           iconSize: [40, 40]
         })}
         position={[enemy.position.lat, enemy.position.lng]}
-        key={`marker_${enemy.id}`}
-        onClick={() => this.handleClickenemie(enemy)}
+        key={enemy.id}
+        onClick={() => this.handleClickEnemy(enemy)}
       />
     ));
     

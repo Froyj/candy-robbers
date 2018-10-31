@@ -25,7 +25,9 @@ class App extends Component {
       enemiesList: []
     };
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
+    this.updateEnemiesList = this.updateEnemiesList.bind(this);
     this.getLoot = this.getLoot.bind(this);
+    this.getgetEnemyLootEnemyLoot = this.getEnemyLoot.bind(this);
   }
 
   initPumpkins() {
@@ -67,6 +69,15 @@ class App extends Component {
     localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList));
   }
 
+  updateEnemiesList(enemiesList) {
+    const newEnemiesList = enemiesList.filter((enemy) => !enemy.isProtected);
+    this.setState({
+      enemiesList: newEnemiesList
+    })
+    localStorage.setItem('enemies', JSON.stringify(newEnemiesList));
+  }
+
+
   // addPumpkin() {
   //   const pumpkin = {
   //     "id": 8,
@@ -80,10 +91,18 @@ class App extends Component {
   //   const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
   //   localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
   // }
-
-  getLoot(pumpkin, prevState) {
+  
+  getEnemyLoot(enemy) {
+    const newPointsAmount = this.state.userInfos.points;
+    this.setState({
+      userInfos: {
+        points: newPointsAmount
+      }
+    });
+  }
+  
+  getLoot(pumpkin) {
     const newPointsAmount = this.state.userInfos.points + pumpkin.reward.points;
-    console.log(pumpkin.reward.candies, this.state.userInfos.bonbondex)
     if (!this.state.userInfos.bonbondex.includes(pumpkin.reward.candies)) {
       this.setState(prevState => ({
         userInfos: {
@@ -96,8 +115,10 @@ class App extends Component {
   }
 
 
+
+
   render() {
-    const { pumpkinsList } = this.state;
+    const { pumpkinsList, enemiesList } = this.state;
     const { userInfos } = this.state;
     return (
       <div className="App">
@@ -111,6 +132,9 @@ class App extends Component {
               pumpkinsList={pumpkinsList}
               updatePumpkinsList={this.updatePumpkinsList}
               getLoot={this.getLoot}
+              enemiesList={enemiesList}
+              updateEnemiesList={this.updateEnemiesList}
+              getEnemyLoot={this.getEnemyLoot}
             />} />
           <Route path="/myprofile" exact component={Profile} />
           <Route path="/mycandydex" exact render={(props) =>
