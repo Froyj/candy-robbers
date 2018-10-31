@@ -1,12 +1,13 @@
 import React from 'react';
-import { Jumbotron, Container, Button, Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import { Button } from 'reactstrap';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import halloweenIllustration from '../icons/halloweenIllustration.jpg'
 
-const WelcomePage = (props) => {
+const WelcomePage = () => {
   return (
     <div>
-      {/* <img style={{height: '100%'}} src="https://images.frandroid.com/wp-content/uploads/2016/10/halloween-illustration.jpg" alt="Halloween" /> */}
+      <img style={{position: 'fixed'}} src={halloweenIllustration} alt="Halloween" />
       <div className="position-bouton">
         <Button to="/map" tag={Link} size="lg" className="wlcbutton" >TOC TOC TOC</Button>
       </div>
