@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import L from 'leaflet';
 import { Marker } from 'react-leaflet';
+
+import LootModal from './LootModal';
 import pumpkinIcon from '../icons/pumpkin.png';
 
 
@@ -11,8 +13,10 @@ class PumpkinsLayer extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      pumpkinsList: props.pumpkinsList
-    }
+      pumpkinsList: props.pumpkinsList,
+      lootAlert: ''
+    };
+    this.clearLootAlert = this.clearLootAlert.bind(this);
   }
 
   readStoredPumpkins() {
@@ -36,13 +40,26 @@ class PumpkinsLayer extends Component {
     if (Math.abs(this.props.userPosition[0] - pumpkin.position.lat) < 0.0004 
     && Math.abs(this.props.userPosition[1] - pumpkin.position.lng) < 0.0004) {
       this.openPumpkin(pumpkin);
+      this.setState({
+        lootAlert: 'ok'
+      })
     } else {
+      this.setState({
+        lootAlert: 'trop loin'
+      })
       console.log('trop loin')
       console.log(`user lat :${this.props.userPosition[0]} user lng :${this.props.userPosition[1]}`)
     }
   }
 
+  clearLootAlert () {
+    this.setState({
+      lootAlert: ''
+    })
+  }
+
   render() {
+    const { lootAlert } = this.state;
     const pumpkinsList = this.readStoredPumpkins();
     console.log(pumpkinsList);
     
@@ -60,10 +77,19 @@ class PumpkinsLayer extends Component {
         onClick={() => this.handleClickPumpkin(pumpkin)}
       />
     ));
+    
+    const display = lootAlert ?(
+      <LootModal 
+          lootAlert={lootAlert}
+          clearLootAlert={this.clearLootAlert}
+      />)
+      : null;
+
 
     return (
-      <div id="map" className="map-container">
+      <div id="map" className="">
         {allPumpkins}
+        {display}   
       </div>
     );
   }

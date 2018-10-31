@@ -57,3 +57,27 @@ a.nav-link {
 .navbar-position {
   z-index: 100;
 }
+
+
+.modal-loot {
+  display: block;
+  font-size: 0.8rem;
+  top: 150px;
+  width:50vw;
+  margin:auto;
+}
+
+.modal-content {
+  background-color: orange;
+  color: black;
+  border-radius: 10px;
+}
+
+.modal-loot button {
+  width: 60px;
+  height: 30px;
+  background-color: black;
+  color: orange;
+  border: 1px solid black;
+  border-radius: 5px;
+}
