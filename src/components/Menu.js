@@ -27,7 +27,7 @@ class Menu extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="navbar-position">
         <Navbar style={{backgroundColor: "orange"}} light expand="md" className="py-3">
           <NavbarBrand to="" tag={Link}>the Candy Robbers</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />

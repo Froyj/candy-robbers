@@ -7,7 +7,7 @@ import halloweenIllustration from '../icons/halloweenIllustration.jpg'
 const WelcomePage = () => {
   return (
     <div>
-      <img style={{position: 'fixed'}} src={halloweenIllustration} alt="Halloween" />
+      <img style={{position: 'fixed', height: 'calc(100vh - 90px)', zIndex: '0'}} src={halloweenIllustration} alt="Halloween" />
       <div className="position-bouton">
         <Button to="/map" tag={Link} size="lg" className="wlcbutton" >TOC TOC TOC</Button>
       </div>
