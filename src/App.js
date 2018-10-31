@@ -21,13 +21,14 @@ class App extends Component {
         pseudo: '',
         points: 0,
         bonbondex: []
-      }
+      },
+      enemiesList: []
     };
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
     this.getLoot = this.getLoot.bind(this);
   }
 
-  componentDidMount() {
+  initPumpkins() {
     let pumpkins = localStorage.getItem('pumpkins');
     if (!pumpkins) {
       pumpkins = require('./pumpkins.json');
@@ -38,6 +39,24 @@ class App extends Component {
     this.setState({
       pumpkinsList: pumpkins
     })
+  }
+
+  initEnemies() {
+    let enemies = localStorage.getItem('enemies');
+    if (!enemies) {
+      enemies = require('./users.json');
+      localStorage.setItem('enemies', JSON.stringify(enemies));
+    } else {
+      enemies = JSON.parse(enemies);
+    }
+    this.setState({
+      enemiesList: enemies
+    })
+  }
+
+  componentDidMount() {
+    this.initPumpkins();
+    this.initEnemies();
   }
 
   updatePumpkinsList(pumpkinsList) {

@@ -9,6 +9,7 @@ import UserMarker from './UserMarker'
 
 import '../css/Map.css';
 import PumpkinsLayer from './PumpkinsLayer';
+import EnemiesLayer from './EnemiesLayer';
 
 
 const defaultCenter = [43.599761799999996, 1.443197];
@@ -62,6 +63,12 @@ class MapLayer extends Component<
             isUserLocated={isUserLocated}
           />
           <PumpkinsLayer
+            pumpkinsList={pumpkinsList}
+            updatePumpkinsList={updatePumpkinsList}
+            userPosition={userPosition}
+            getLoot={getLoot}
+          />
+          <EnemiesLayer
             pumpkinsList={pumpkinsList}
             updatePumpkinsList={updatePumpkinsList}
             userPosition={userPosition}
