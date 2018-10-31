@@ -4,42 +4,48 @@
     "position": {
       "lat": 43.5994624,
       "lng": 1.4352384
-    }
+    },
+    "isProtected": false
   },
   {
     "id": 2,
     "position": {
       "lat": 43.5997624,
       "lng": 1.4353484
-    }
+    },
+    "isProtected": false
   },
   {
     "id": 3,
     "position": {
       "lat": 43.5984624,
       "lng": 1.4342384
-    }
+    },
+    "isProtected": false
   },
   {
     "id": 4,
     "position": {
       "lat": 43.5996624,
       "lng": 1.4354384
-    }
+    },
+    "isProtected": false
   },
   {
     "id": 5,
     "position": {
       "lat": 43.6004624,
       "lng": 1.4357384
-    }
+    },
+    "isProtected": false
   },
   {
     "id": 6,
     "position": {
       "lat": 43.599523399999995,
       "lng": 1.4527674
-    }
+    },
+    "isProtected": false
   }
 ]
 

@@ -25,9 +25,9 @@ class EnemiesLayer extends Component {
   }
 
   attackEnemy(enemy) {
-    const newEnemy = {...enemy};
-    const enemiesList = this.state.enemiesList.map(enemie =>
-      enemie.id === newEnemy.id ? newEnemy : enemy
+    const newEnemy = {...enemy, isProtected:true};
+    const enemiesList = this.state.enemiesList.map(enemy =>
+      enemy.id === newEnemy.id ? newEnemy : enemy
     );
     this.setState({
       enemiesList
@@ -37,6 +37,7 @@ class EnemiesLayer extends Component {
   }
 
   handleClickEnemy (enemy) {
+    if (enemy.isProtected) { return }
     if (Math.abs(this.props.userPosition[0] - enemy.position.lat) < 0.0004 
     && Math.abs(this.props.userPosition[1] - enemy.position.lng) < 0.0004) {
       this.attackEnemy(enemy);
@@ -59,6 +60,7 @@ class EnemiesLayer extends Component {
   }
 
   render() {
+    console.log(this.props.enemiesList);
     const { attackAlert } = this.state;
     const enemiesList = this.readStoredEnemies();
     console.log(enemiesList);

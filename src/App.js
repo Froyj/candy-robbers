@@ -27,7 +27,7 @@ class App extends Component {
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
     this.updateEnemiesList = this.updateEnemiesList.bind(this);
     this.getLoot = this.getLoot.bind(this);
-    this.getgetEnemyLootEnemyLoot = this.getEnemyLoot.bind(this);
+    this.getEnemyLoot= this.getEnemyLoot.bind(this);
   }
 
   initPumpkins() {
@@ -93,9 +93,10 @@ class App extends Component {
   // }
   
   getEnemyLoot(enemy) {
-    const newPointsAmount = this.state.userInfos.points;
+    const newPointsAmount = this.state.userInfos.points + 200;
     this.setState({
       userInfos: {
+        ...this.state.userInfos,
         points: newPointsAmount
       }
     });
@@ -135,8 +136,13 @@ class App extends Component {
               enemiesList={enemiesList}
               updateEnemiesList={this.updateEnemiesList}
               getEnemyLoot={this.getEnemyLoot}
-            />} />
-          <Route path="/myprofile" exact component={Profile} />
+            />}
+          />
+          <Route path="/myprofile" exact render={(props) => 
+            <Profile {...props}
+              userInfos={userInfos}
+            />}
+          />
           <Route path="/mycandydex" exact render={(props) =>
             <Dex {...props}
               userInfos={userInfos}
