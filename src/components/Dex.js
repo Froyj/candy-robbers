@@ -8,9 +8,11 @@ class Dex extends Component {
     return (
       <div className="container">
       <h3 className="my-4 dex-titre">Dex : mes bonbons d'Halloween</h3>
-          {dataBonbons.map(bonbon => (
-          <Bonbons key={bonbon.id} image={bonbon.image} nom={bonbon.nom}/>
-          ))}
+          {dataBonbons.map(bonbon => {
+            const isIncluded = this.props.userInfos.bonbondex.includes(bonbon.id.toString())
+            return (
+              <Bonbons isIncluded={isIncluded} key={bonbon.id} image={bonbon.image} nom={bonbon.nom}/>
+            )})}
       </div>
     );
   }

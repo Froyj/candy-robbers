@@ -36,7 +36,7 @@ class App extends Component {
       pumpkins = JSON.parse(pumpkins);
     }
     this.setState({
-      pumpkinsList : pumpkins
+      pumpkinsList: pumpkins
     })
   }
 
@@ -45,7 +45,7 @@ class App extends Component {
     this.setState({
       pumpkinsList: newPumpkinsList
     })
-    localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList)); 
+    localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList));
   }
 
   // addPumpkin() {
@@ -67,9 +67,9 @@ class App extends Component {
     console.log(pumpkin.reward.candies, this.state.userInfos.bonbondex)
     if (!this.state.userInfos.bonbondex.includes(pumpkin.reward.candies)) {
       this.setState(prevState => ({
-        userInfos : {
+        userInfos: {
           bonbondex: [...prevState.userInfos.bonbondex, pumpkin.reward.candies],
-          points: newPointsAmount 
+          points: newPointsAmount
         }
       }))
     }
@@ -79,6 +79,7 @@ class App extends Component {
 
   render() {
     const { pumpkinsList } = this.state;
+    const { userInfos } = this.state;
     return (
       <div className="App">
         <div>
@@ -86,14 +87,17 @@ class App extends Component {
         </div>
         <div>
           <Route path="/" exact component={WelcomePage} />
-          <Route path="/map" exact render={(props) => 
-            <Geolocalisation {...props} 
+          <Route path="/map" exact render={(props) =>
+            <Geolocalisation {...props}
               pumpkinsList={pumpkinsList}
               updatePumpkinsList={this.updatePumpkinsList}
               getLoot={this.getLoot}
-          />} />
+            />} />
           <Route path="/myprofile" exact component={Profile} />
-          <Route path="/mycandydex" exact component={Dex} />
+          <Route path="/mycandydex" exact render={(props) =>
+            <Dex {...props}
+              userInfos={userInfos}
+            />} />
         </div>
       </div>
     );
