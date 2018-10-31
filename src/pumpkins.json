@@ -7,7 +7,7 @@
     },
     "reward": {
       "candies":"2",
-      "points": 50
+      "points": 30
     },
     "isOpen": false
   },
@@ -19,7 +19,7 @@
     },
     "reward": {
       "candies":"8",
-      "points": 50
+      "points": 10
     },
     "isOpen": false
   },
@@ -31,7 +31,7 @@
     },
     "reward": {
       "candies":"4",
-      "points": 50
+      "points": 40
     },
     "isOpen": false
   },
@@ -43,7 +43,7 @@
     },
     "reward": {
       "candies":"2",
-      "points": 50
+      "points": 30
     },
     "isOpen": false
   },
@@ -55,7 +55,7 @@
     },
     "reward": {
       "candies":"1",
-      "points": 50
+      "points": 60
     },
     "isOpen": false
   },
@@ -91,7 +91,7 @@
     },
     "reward": {
       "candies":"8",
-      "points": 50
+      "points": 10
     },
     "isOpen": false
   },
@@ -103,6 +103,90 @@
     },
     "reward": {
       "candies":"9",
+      "points": 50
+    },
+    "isOpen": false
+  },
+  {
+    "id": 11,
+    "position": {
+      "lat": 43.599161, 
+      "lng": 1.442721
+    },
+    "reward": {
+      "candies":"1",
+      "points": 60
+    },
+    "isOpen": false
+  },
+  {
+    "id": 12,
+    "position": {
+      "lat": 43.599426, 
+      "lng": 1.446326
+    },
+    "reward": {
+      "candies":"2",
+      "points": 30
+    },
+    "isOpen": false
+  },
+  {
+    "id": 13,
+    "position": {
+      "lat": 43.600832, 
+      "lng": 1.440768
+    },
+    "reward": {
+      "candies":"3",
+      "points": 50
+    },
+    "isOpen": false
+  },
+  {
+    "id": 14,
+    "position": {
+      "lat": 43.601959, 
+      "lng": 1.443837
+    },
+    "reward": {
+      "candies":"4",
+      "points": 40
+    },
+    "isOpen": false
+  },
+  {
+    "id": 15,
+    "position": {
+      "lat": 43.601959, 
+      "lng": 1.448129
+    },
+    "reward": {
+      "candies":"5",
+      "points": 50
+    },
+    "isOpen": false
+  },
+  {
+    "id": 16,
+    "position": {
+      "lat": 43.5997779, 
+      "lng": 1.4340218
+    },
+    "reward": {
+      "candies":"6",
+      "points": 50
+    },
+    "isOpen": false
+  },
+  {
+    "id": 17,
+    "position": {
+      "lat": 43.598851, 
+      "lng": 1.436928
+    },
+    "reward": {
+      "candies":"7",
       "points": 50
     },
     "isOpen": false

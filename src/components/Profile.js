@@ -44,8 +44,8 @@ class Profile extends Component {
             </Col>
           </Row>
         </div>
-        {/* <Row>
-          <Col xs="12">
+        <Row className="carte-distinctions text-center mb-3">
+          <Col xs="12 d-flex justify-content-center">
             <div className="distinctions">
               <h2 className="text-center mb-3">Distinctions</h2>
               <h4 className="mb-3 mt-2">Collections :</h4>
@@ -60,7 +60,7 @@ class Profile extends Component {
               </p>
             </div>
           </Col>
-        </Row> */}
+        </Row>
 
       </Container>
     );
