@@ -7,9 +7,31 @@ class Bonbons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: false
+      checked: false,
+      id: props.key,
+      bonbonOpen: props
     }
   }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.bonbonOpen !== state.bonbonOpen) {
+      return { bonbonOpen: props.bonbonOpen }
+    }
+    else {
+      return null
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.bonbonOpen !== prevState.bonbonOpen) {
+      this.checkedBonbon()
+    }
+  }
+
+  checkedBonbon = () => {
+    this.setState({checked: !false})
+  }
+
   render() {
     return (
       <div style={{ backgroundColor: "orange" }}>
@@ -21,7 +43,7 @@ class Bonbons extends Component {
             <span>{this.props.nom}</span>
           </div>
           <div className="col ml-2">
-            <img style={{ width: '6vw' }} src={this.state.checked ? checkON : checkOFF } alt="CHECK!" />
+            <img style={{ width: '6vw' }} src={this.state.checked ? checkON : checkOFF} alt="CHECK!" />
           </div>
         </div>
       </div>
