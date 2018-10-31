@@ -7,7 +7,7 @@ class AttackModal extends Component {
 
     if (attackAlert === 'ok') {
       return (
-        <div className="modal show modal-attack" tabIndex="-1" role="dialog">
+        <div className="modal show modal-loot" tabIndex="-1" role="dialog">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body text-center">
@@ -22,7 +22,7 @@ class AttackModal extends Component {
 
     if (attackAlert === 'trop loin') {
       return (
-        <div className="modal show modal-attack" tabIndex="-1" role="dialog">
+        <div className="modal show modal-loot" tabIndex="-1" role="dialog">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body">

@@ -48,9 +48,8 @@ class EnemiesLayer extends Component {
       this.setState({
         attackAlert: 'trop loin'
       })
-      console.log('trop loin')
-      console.log(`user lat :${this.props.userPosition[0]} user lng :${this.props.userPosition[1]}`)
     }
+    console.log(this.state.attackAlert)
   }
 
   clearAttackAlert () {
@@ -61,6 +60,7 @@ class EnemiesLayer extends Component {
 
   render() {
     console.log(this.props.enemiesList);
+
     const { attackAlert } = this.state;
     const enemiesList = this.readStoredEnemies();
     console.log(enemiesList);
@@ -80,10 +80,10 @@ class EnemiesLayer extends Component {
       />
     ));
     
-    const display = attackAlert ?(
+    const display = this.state.attackAlert ?(
       <AttackModal 
           attackAlert={attackAlert}
-          clearLootAlert={this.clearLootAlert}
+          clearAttackAlert={this.clearAttackAlert}
       />)
       : null;
 
