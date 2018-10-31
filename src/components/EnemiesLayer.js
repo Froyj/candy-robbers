@@ -38,8 +38,8 @@ class EnemiesLayer extends Component {
 
   handleClickEnemy (enemy) {
     if (enemy.isProtected) { return }
-    if (Math.abs(this.props.userPosition[0] - enemy.position.lat) < 0.0004 
-    && Math.abs(this.props.userPosition[1] - enemy.position.lng) < 0.0004) {
+    if (Math.abs(this.props.userPosition[0] - enemy.position.lat) < 0.1 
+    && Math.abs(this.props.userPosition[1] - enemy.position.lng) < 0.1) {
       this.attackEnemy(enemy);
       this.setState({
         attackAlert: 'ok'

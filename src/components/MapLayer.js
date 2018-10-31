@@ -75,7 +75,6 @@ class MapLayer extends Component<
             getEnemyLoot={getEnemyLoot}
           />
         </Map>
-
       </div>
     );
   }

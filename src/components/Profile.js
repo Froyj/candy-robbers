@@ -50,12 +50,12 @@ class Profile extends Component {
               <h2 className="text-center mb-3">Distinctions</h2>
               <h4 className="mb-3 mt-2">Collections :</h4>
               <p>
-                <img src={candies} />
-                <img src={pumpkin} />
+                <img src={candies} alt="bonbons"/>
+                <img src={pumpkin} alt="citrouille"/>
               </p>
               <h4 className="mb-3 mt-2">Bounty hunter :</h4>
               <p>
-                <img src={beer} />
+                <img src={beer}/>
                 <img src={thief} />
               </p>
             </div>

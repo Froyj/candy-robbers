@@ -36,7 +36,6 @@
   font-family: 'Creepster', cursive;
 }
 
-
 .distinctions h3 {
   font-size: 1.2rem;
 }
@@ -49,5 +48,5 @@
 .distinctions img {
   height: 40px;
   width: 40px;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
