@@ -3,12 +3,10 @@ body {
 }
 /* Jumbotron */
 
-h1.logo {
-  font-family: 'Creepster', cursive;
-  font-size: 7rem;
-  color: black;
-  text-align: center
-};
+@font-face {
+  font-family: "Pieces";
+	src: url('./pieces nfi.ttf');
+}
 
 div.jumbotron-fluid {
   padding: 0;
@@ -25,15 +23,15 @@ div.container-fluid {
   font-size: 2.5rem;
   background: black;
   font-family: 'Creepster', cursive;
-  padding: 10px 20px;
+  padding: 5px 40px;
   border: 1px solid orangered;
 }
 p.wlcwrapper {
   text-align: center;
 }
-.card {
+/* .card {
   border: 1px solid #333333;
-}
+} */
 
 .position-bouton {
   position: absolute;
@@ -45,12 +43,15 @@ p.wlcwrapper {
 
 /*Menu*/
 .navbar {
-  font-family: 'Creepster', cursive;
+  padding-top: 1.5rem!important;
 }
 a.navbar-brand {
-  font-size: 2rem;
+  font-family: 'Pieces', cursive;
+  font-size: 1.5rem;
+  padding-top: 1rem;
 }
 a.nav-link {
+  font-family: 'Creepster', cursive;
   font-size: 1.5rem;
 }
 
