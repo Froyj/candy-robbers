@@ -34,6 +34,7 @@
   margin: 0.5rem;
   color: orange;
   font-family: 'Creepster', cursive;
+  width: 60%;
 }
 
 
@@ -49,5 +50,5 @@
 .distinctions img {
   height: 40px;
   width: 40px;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
