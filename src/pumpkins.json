@@ -2,12 +2,12 @@
   {
     "id": 1,
     "position": {
-      "lat": 43.60329,
+      "lat": 43.5995329,
       "lng": 1.443412
     },
     "reward": [
       "Devil sucette",
-      "50 points"
+      50
     ],
     "isOpen": false
   },
@@ -20,7 +20,7 @@
     "reward": [
       "Caramel pourri",
       "Suce limace",
-      "100 points"
+      100
     ],
     "isOpen": false
   },
@@ -32,7 +32,7 @@
     },
     "reward": [
       "Caramel pourri",
-      "80 points"
+      80
     ],
     "isOpen": false
   },
@@ -44,7 +44,7 @@
     },
     "reward": [
       "Suce limace",
-      "50 points"
+      50
     ],
     "isOpen": false
   },
@@ -57,7 +57,7 @@
     "reward": [
       "Devil sucette",
       "Caramel pourri",
-      "200 points"
+      200
     ],
     "isOpen": false
   },
@@ -69,7 +69,7 @@
     },
     "reward": [
       "Suce limace",
-      "30 points"
+      30
     ],
     "isOpen": false
   },
@@ -81,7 +81,7 @@
     },
     "reward": [
       "Glace vomi",
-      "60 points"
+      60
     ],
     "isOpen": false
   },
@@ -93,7 +93,7 @@
     },
     "reward": [
       "Glace vomi",
-      "60 points"
+      60
     ],
     "isOpen": false
   },
@@ -105,7 +105,7 @@
     },
     "reward": [
       "Glace vomi",
-      "60 points"
+      60
     ],
     "isOpen": false
   }
