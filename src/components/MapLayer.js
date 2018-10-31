@@ -9,6 +9,7 @@ import UserMarker from './UserMarker'
 
 import '../css/Map.css';
 import PumpkinsLayer from './PumpkinsLayer';
+import EnemiesLayer from './EnemiesLayer';
 
 
 const defaultCenter = [43.599761799999996, 1.443197];
@@ -43,7 +44,7 @@ class MapLayer extends Component<
 
 
   render() {
-    const { userPosition, isUserLocated, pumpkinsList, updatePumpkinsList, getLoot } = this.props
+    const { userPosition, isUserLocated, pumpkinsList, updatePumpkinsList, getLoot, enemiesList, updateEnemiesList, getEnemyLoot } = this.props
     const { zoom, viewport } = this.state;
 
     return (
@@ -66,6 +67,12 @@ class MapLayer extends Component<
             updatePumpkinsList={updatePumpkinsList}
             userPosition={userPosition}
             getLoot={getLoot}
+          />
+          <EnemiesLayer
+            enemiesList={enemiesList}
+            updateEnemiesList={updateEnemiesList}
+            userPosition={userPosition}
+            getEnemyLoot={getEnemyLoot}
           />
         </Map>
 
