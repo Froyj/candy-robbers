@@ -43,7 +43,7 @@ class MapLayer extends Component<
 
 
   render() {
-    const { userPosition, isUserLocated, pumpkinsList, updatePumpkinsList } = this.props
+    const { userPosition, isUserLocated, pumpkinsList, updatePumpkinsList, getLoot } = this.props
     const { zoom, viewport } = this.state;
 
     return (
@@ -65,6 +65,7 @@ class MapLayer extends Component<
             pumpkinsList={pumpkinsList}
             updatePumpkinsList={updatePumpkinsList}
             userPosition={userPosition}
+            getLoot={getLoot}
           />
         </Map>
 

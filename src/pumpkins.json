@@ -2,13 +2,13 @@
   {
     "id": 1,
     "position": {
-      "lat": 43.5995329,
-      "lng": 1.443412
+      "lat": 43.5994624,
+      "lng": 1.4352384
     },
-    "reward": [
-      "Devil sucette",
-      50
-    ],
+    "reward": {
+      "candies":"2",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -17,11 +17,10 @@
       "lat": 43.599988,
       "lng": 1.442882
     },
-    "reward": [
-      "Caramel pourri",
-      "Suce limace",
-      100
-    ],
+    "reward": {
+      "candies":"8",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -30,10 +29,10 @@
       "lat": 43.604820,
       "lng": 1.447280
     },
-    "reward": [
-      "Caramel pourri",
-      80
-    ],
+    "reward": {
+      "candies":"4",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -42,10 +41,10 @@
       "lat": 43.604516,
       "lng": 1.439538
     },
-    "reward": [
-      "Suce limace",
-      50
-    ],
+    "reward": {
+      "candies":"2",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -54,11 +53,10 @@
       "lat": 43.598051,
       "lng": 1.431805
     },
-    "reward": [
-      "Devil sucette",
-      "Caramel pourri",
-      200
-    ],
+    "reward": {
+      "candies":"1",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -67,10 +65,10 @@
       "lat": 43.601353,
       "lng": 1.439101
     },
-    "reward": [
-      "Suce limace",
-      30
-    ],
+    "reward": {
+      "candies":"6",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -79,10 +77,10 @@
       "lat": 43.597188,
       "lng": 1.447995
     },
-    "reward": [
-      "Glace vomi",
-      60
-    ],
+    "reward": {
+      "candies":"3",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -91,10 +89,10 @@
       "lat": 43.5995231,
       "lng": 1.4527862
     },
-    "reward": [
-      "Glace vomi",
-      60
-    ],
+    "reward": {
+      "candies":"8",
+      "points": 50
+    },
     "isOpen": false
   },
   {
@@ -103,10 +101,10 @@
       "lat": 43.5992231,
       "lng": 1.4524862
     },
-    "reward": [
-      "Glace vomi",
-      60
-    ],
+    "reward": {
+      "candies":"9",
+      "points": 50
+    },
     "isOpen": false
   }
 ]

@@ -24,6 +24,7 @@ class App extends Component {
       }
     };
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
+    this.getLoot = this.getLoot.bind(this);
   }
 
   componentDidMount() {
@@ -47,28 +48,33 @@ class App extends Component {
     localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList)); 
   }
 
-  addPumpkin() {
-    const pumpkin = {
-      "id": 8,
-      "isOpen": false,
-      "position": { lat: 43.60482, lng: 1.44728 },
-      "reward": ["Caramel pourri", "80 points"]
-    }
-    if (!localStorage.getItem('pumpkins')) {
-      localStorage.setItem('pumpkins', JSON.stringify([]));
-    }
-    const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
-    localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
-  }
-
-  // getLoot(pumpkin, prevState) {
-  //   this.setState({
-  //     userInfos: {
-  //       bondondex,
-  //       points 
-  //     }
-  //   })
+  // addPumpkin() {
+  //   const pumpkin = {
+  //     "id": 8,
+  //     "isOpen": false,
+  //     "position": { lat: 43.60482, lng: 1.44728 },
+  //     "reward": ["Caramel pourri", "80 points"]
+  //   }
+  //   if (!localStorage.getItem('pumpkins')) {
+  //     localStorage.setItem('pumpkins', JSON.stringify([]));
+  //   }
+  //   const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
+  //   localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
   // }
+
+  getLoot(pumpkin, prevState) {
+    const newPointsAmount = this.state.userInfos.points + pumpkin.reward.points;
+    console.log(pumpkin.reward.candies, this.state.userInfos.bonbondex)
+    if (!this.state.userInfos.bonbondex.includes(pumpkin.reward.candies)) {
+      this.setState(prevState => ({
+        userInfos : {
+          bonbondex: [...prevState.userInfos.bonbondex, pumpkin.reward.candies],
+          points: newPointsAmount 
+        }
+      }))
+    }
+    console.log(this.state.userInfos)
+  }
 
 
   render() {
@@ -84,6 +90,7 @@ class App extends Component {
             <Geolocalisation {...props} 
               pumpkinsList={pumpkinsList}
               updatePumpkinsList={this.updatePumpkinsList}
+              getLoot={this.getLoot}
           />} />
           <Route path="/myprofile" exact component={Profile} />
           <Route path="/mycandydex" exact component={Dex} />
