@@ -1,43 +1,68 @@
 import React, { Component } from 'react';
-
-import {
-  Map, TileLayer, type Viewport
-} from 'react-leaflet';
-
-import UserMarker from './UserMarker'
+import ReactDOMServer from 'react-dom/server';
+import L from 'leaflet';
+import { Marker } from 'react-leaflet';
+import pumpkinIcon from '../icons/pumpkin.png';
 
 
 import '../css/Map.css';
 
-
-const defaultCenter = [43.599761799999996, 1.443197];
-const defaultZoom = 15;
-
-class PumpkinsLayer extends Component<
-  {},
-  { viewport: Viewport },
-  > {
-  state = {
-    viewport: defaultCenter,
-  }
-
-  constructor(props) {
+class PumpkinsLayer extends Component {
+  constructor (props) {
     super(props);
     this.state = {
-      startCenter : defaultCenter.center,
-      zoom: defaultZoom
-    };
-    this.centerOnUser = this.centerOnUser.bind(this);
+      pumpkinsList: props.pumpkinsList
+    }
   }
 
+  readStoredPumpkins() {
+    const pumpkins = JSON.parse(localStorage.getItem('pumpkins'));
+    return pumpkins || [];
+  }
+
+  openPumpkin(pumpkin) {
+    const newPumpkin = {...pumpkin, isOpen:true};
+    const pumpkinsList = this.state.pumpkinsList.map(pumpkin =>
+      pumpkin.id === newPumpkin.id ? newPumpkin : pumpkin
+    );
+    this.setState({
+      pumpkinsList
+    })
+    this.props.updatePumpkinsList(pumpkinsList);
+  }
+
+  handleClickPumpkin (pumpkin) {
+    if (Math.abs(this.props.userPosition[0] - pumpkin.position.lat) < 0.0004 
+    && Math.abs(this.props.userPosition[1] - pumpkin.position.lng) < 0.0004) {
+      this.openPumpkin(pumpkin);
+    } else {
+      console.log('trop loin')
+      console.log(`user lat :${this.props.userPosition[0]} user lng :${this.props.userPosition[1]}`)
+    }
+  }
 
   render() {
-    const { userPosition, isUserLocated } = this.props
-    const { zoom, viewport } = this.state;
+    const pumpkinsList = this.readStoredPumpkins();
+    console.log(pumpkinsList);
+    
+    const allPumpkins = pumpkinsList.map(pumpkin => (
+      <Marker
+        icon={L.divIcon({
+          className: 'custom-icon',
+          html: ReactDOMServer.renderToString(
+            <img src={pumpkinIcon} alt="citrouille" style={{width: "40px", height:"40px"}}/>
+          ),
+          iconSize: [40, 40]
+        })}
+        position={[pumpkin.position.lat, pumpkin.position.lng]}
+        key={`marker_${pumpkin.id}`}
+        onClick={() => this.handleClickPumpkin(pumpkin)}
+      />
+    ));
 
     return (
       <div id="map" className="map-container">
-        
+        {allPumpkins}
       </div>
     );
   }

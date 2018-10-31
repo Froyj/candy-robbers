@@ -59,7 +59,7 @@
       "Caramel pourri",
       "200 points"
     ],
-    "isOpen": true
+    "isOpen": false
   },
   {
     "id": 6,
@@ -83,6 +83,33 @@
       "Glace vomi",
       "60 points"
     ],
-    "isOpen": true
+    "isOpen": false
+  },
+  {
+    "id": 9,
+    "position": {
+      "lat": 43.5995231,
+      "lng": 1.4527862
+    },
+    "reward": [
+      "Glace vomi",
+      "60 points"
+    ],
+    "isOpen": false
+  },
+  {
+    "id": 10,
+    "position": {
+      "lat": 43.5992231,
+      "lng": 1.4524862
+    },
+    "reward": [
+      "Glace vomi",
+      "60 points"
+    ],
+    "isOpen": false
   }
 ]
+
+
+
