@@ -17,11 +17,11 @@ class LootModal extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body text-center">
-                <p style={{ fontSize: '22px', marginBottom: '-5px' }}>Bravo ! Vous avez gagné une récompense <span role="img" aria-label="sheep">👻</span></p>
+                <p style={{ fontSize: '25px', marginBottom: '-5px' }}>Bravo ! Vous avez gagné une récompense <span role="img" aria-label="sheep">👻</span></p>
                 <NavItem style={{ listStyle: 'none' }}>
                   <NavLink to="/mycandydex" tag={Link} className="text-center" style={{ color: 'orangered', fontSize: '15px' }}>Voir mon candydex</NavLink>
                 </NavItem>
-                <button type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
+                <button style={{ fontSize: '17px' }} type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
               </div>
             </div>
           </div>
@@ -35,8 +35,8 @@ class LootModal extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body">
-                <p style={{ fontSize: '22px' }}>Vous êtes trop loin pour récupérer cette récompense <span role="img" aria-label="sheep">👹</span></p>
-                <button type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
+                <p style={{ fontSize: '25px' }}>Vous êtes trop loin pour récupérer cette récompense <span role="img" aria-label="sheep">👹</span></p>
+                <button style={{ fontSize: '17px' }} type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
               </div>
             </div>
           </div>

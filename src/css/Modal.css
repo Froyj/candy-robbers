@@ -1,3 +1,26 @@
 .modal-style {
     font-family: 'Creepster', cursive;
 }
+
+.modal-loot {
+    display: block;
+    font-size: 0.8rem;
+    top: 150px;
+    width:70vw;
+    margin:auto;
+  }
+  
+  .modal-content {
+    background-color: black;
+    color: orange;
+    border-radius: 10px;
+  }
+  
+  .modal-loot button {
+    width: 60px;
+    height: 30px;
+    background-color: orange;
+    color: black;
+    border: 1px solid orange;
+    border-radius: 5px;
+  }
