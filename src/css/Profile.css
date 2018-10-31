@@ -1,6 +1,5 @@
 .user-infos {
   border-radius: 5px;
-  border: 2px solid orange;
   padding: 1rem;
   margin: 0.5rem;
   color: orange;
@@ -8,6 +7,19 @@
 
 .user-infos a {
   display: block;
+}
+
+
+.typo-profile {
+  font-family: 'Creepster', cursive;
+}
+
+.taille-typo {
+  font-size: 20px;
+}
+
+.halloween-avatar {
+  border: 2px solid orange;
 }
 
 .user-infos img {
@@ -20,8 +32,8 @@
   border-radius: 5px;
   padding: 1rem;
   margin: 0.5rem;
-  background-color: #484848;
   color: orange;
+  font-family: 'Creepster', cursive;
 }
 
 

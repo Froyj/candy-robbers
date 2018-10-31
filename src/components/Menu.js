@@ -37,7 +37,7 @@ class Menu extends Component {
                 <NavLink to="/map" tag={Link}>Carte</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/mycandydex" tag={Link}>Mes bonbons</NavLink>
+                <NavLink to="/mycandydex" tag={Link}>Candydex</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/myprofile" tag={Link}>Profil</NavLink>
