@@ -39,13 +39,6 @@
   .style-bouton {
     font-size: 2.5rem;
   }
-  .position-bouton {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    top: 90%;
-    left: 50%
-  }
 }
 
 body {
@@ -68,18 +61,15 @@ div.container-fluid {
 }
 
 .style-bouton {
-  color: orangered;
-  background: black;
+  color: orange;
+  background:black;
   font-family: 'Creepster', cursive;
   padding: 5px 40px;
-  border: 1px solid orangered;
+  border: 1px solid orange;
 }
 p.wlcwrapper {
   text-align: center;
 }
-/* .card {
-  border: 1px solid #333333;
-} */
 
 .position-bouton {
   position: absolute;
@@ -105,6 +95,7 @@ a.nav-link {
   z-index: 100;
 }
 
+/* Modales */
 
 .modal-loot {
   display: block;
