@@ -17,7 +17,11 @@ class App extends Component {
     super(props);
     this.state = {
       pumpkinsList: [],
-      userInfos: {}
+      userInfos: {
+        pseudo: '',
+        points: 0,
+        bonbondex: []
+      }
     };
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
   }
@@ -36,10 +40,11 @@ class App extends Component {
   }
 
   updatePumpkinsList(pumpkinsList) {
-    // const pumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
+    const newPumpkinsList = pumpkinsList.filter((pumpkin) => !pumpkin.isOpen);
     this.setState({
-      pumpkinsList
+      pumpkinsList: newPumpkinsList
     })
+    localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList)); 
   }
 
   addPumpkin() {
@@ -55,6 +60,16 @@ class App extends Component {
     const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
     localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
   }
+
+  // getLoot(pumpkin, prevState) {
+  //   this.setState({
+  //     userInfos: {
+  //       bondondex,
+  //       points 
+  //     }
+  //   })
+  // }
+
 
   render() {
     const { pumpkinsList } = this.state;
