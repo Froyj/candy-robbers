@@ -8,7 +8,7 @@ const WelcomePage = (props) => {
     <div>
       {/* <img style={{height: '100%'}} src="https://images.frandroid.com/wp-content/uploads/2016/10/halloween-illustration.jpg" alt="Halloween" /> */}
       <div className="position-bouton">
-        <Button to="/map" tag={Link} size="lg" className="wlcbutton" >TOC TOC TOC</Button>
+        <Button to="/map" tag={Link} size="lg" className="style-bouton" >TOC TOC TOC</Button>
       </div>
     </div>
   );
