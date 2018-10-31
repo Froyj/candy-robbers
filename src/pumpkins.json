@@ -190,8 +190,17 @@
       "points": 50
     },
     "isOpen": false
+  },
+  {
+    "id": 18,
+    "position": {
+      "lat": 43.599981, 
+      "lng": 1.443771
+    },
+    "reward": {
+      "candies":"7",
+      "points": 50
+    },
+    "isOpen": false
   }
 ]
-
-
-
