@@ -1,3 +1,53 @@
+/* Smartpĥone petit écran */
+@media only screen and (max-width:375px) {
+  a.navbar-brand {
+    font-size: 1rem;
+  }
+  a.nav-link {
+    font-family: 'Creepster', cursive;
+    font-size: 1rem;
+  }
+  .style-bouton {
+    font-size: 2rem;
+    }
+}
+/* Smartpĥone récent */
+@media only screen and (min-width:375px) {
+  a.navbar-brand {
+    font-size: 1.5rem;
+  }
+  a.nav-link {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+  }
+  .style-bouton {
+    font-size: 2.5rem;
+  }
+}
+/* Version desktop */
+@media only screen and (min-width:900px) {
+  .navbar {
+    padding-bottom: 0.5rem!important;
+  }
+  a.navbar-brand {
+    font-size: 2.5rem;
+  }
+  a.nav-link {
+    font-family: 'Creepster', cursive;
+    font-size: 2rem;
+  }
+  .style-bouton {
+    font-size: 2.5rem;
+  }
+  .position-bouton {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 90%;
+    left: 50%
+  }
+}
+
 body {
   background-color: #484848;
 }
@@ -19,8 +69,6 @@ div.container-fluid {
 
 .style-bouton {
   color: orangered;
-  font-weight: bold;
-  font-size: 2.5rem;
   background: black;
   font-family: 'Creepster', cursive;
   padding: 5px 40px;
@@ -47,12 +95,10 @@ p.wlcwrapper {
 }
 a.navbar-brand {
   font-family: 'Pieces', cursive;
-  font-size: 1.5rem;
   padding-top: 1rem;
 }
 a.nav-link {
   font-family: 'Creepster', cursive;
-  font-size: 1.5rem;
 }
 
 .navbar-position {
@@ -82,3 +128,4 @@ a.nav-link {
   border: 1px solid black;
   border-radius: 5px;
 }
+
