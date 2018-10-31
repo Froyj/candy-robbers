@@ -21,13 +21,16 @@ class App extends Component {
         pseudo: '',
         points: 0,
         bonbondex: []
-      }
+      },
+      enemiesList: []
     };
     this.updatePumpkinsList = this.updatePumpkinsList.bind(this);
+    this.updateEnemiesList = this.updateEnemiesList.bind(this);
     this.getLoot = this.getLoot.bind(this);
+    this.getEnemyLoot= this.getEnemyLoot.bind(this);
   }
 
-  componentDidMount() {
+  initPumpkins() {
     let pumpkins = localStorage.getItem('pumpkins');
     if (!pumpkins) {
       pumpkins = require('./pumpkins.json');
@@ -40,6 +43,24 @@ class App extends Component {
     })
   }
 
+  initEnemies() {
+    let enemies = localStorage.getItem('enemies');
+    if (!enemies) {
+      enemies = require('./users.json');
+      localStorage.setItem('enemies', JSON.stringify(enemies));
+    } else {
+      enemies = JSON.parse(enemies);
+    }
+    this.setState({
+      enemiesList: enemies
+    })
+  }
+
+  componentDidMount() {
+    this.initPumpkins();
+    this.initEnemies();
+  }
+
   updatePumpkinsList(pumpkinsList) {
     const newPumpkinsList = pumpkinsList.filter((pumpkin) => !pumpkin.isOpen);
     this.setState({
@@ -47,6 +68,15 @@ class App extends Component {
     })
     localStorage.setItem('pumpkins', JSON.stringify(newPumpkinsList));
   }
+
+  updateEnemiesList(enemiesList) {
+    const newEnemiesList = enemiesList.filter((enemy) => !enemy.isProtected);
+    this.setState({
+      enemiesList: newEnemiesList
+    })
+    localStorage.setItem('enemies', JSON.stringify(newEnemiesList));
+  }
+
 
   // addPumpkin() {
   //   const pumpkin = {
@@ -61,10 +91,19 @@ class App extends Component {
   //   const previousPumpkinsList = JSON.parse(localStorage.getItem('pumpkins'));
   //   localStorage.setItem('pumpkins', JSON.stringify([...previousPumpkinsList, pumpkin]));
   // }
-
-  getLoot(pumpkin, prevState) {
+  
+  getEnemyLoot(enemy) {
+    const newPointsAmount = this.state.userInfos.points + 200;
+    this.setState({
+      userInfos: {
+        ...this.state.userInfos,
+        points: newPointsAmount
+      }
+    });
+  }
+  
+  getLoot(pumpkin) {
     const newPointsAmount = this.state.userInfos.points + pumpkin.reward.points;
-    console.log(pumpkin.reward.candies, this.state.userInfos.bonbondex)
     if (!this.state.userInfos.bonbondex.includes(pumpkin.reward.candies)) {
       this.setState(prevState => ({
         userInfos: {
@@ -77,8 +116,10 @@ class App extends Component {
   }
 
 
+
+
   render() {
-    const { pumpkinsList } = this.state;
+    const { pumpkinsList, enemiesList } = this.state;
     const { userInfos } = this.state;
     return (
       <div className="App">
@@ -92,8 +133,16 @@ class App extends Component {
               pumpkinsList={pumpkinsList}
               updatePumpkinsList={this.updatePumpkinsList}
               getLoot={this.getLoot}
-            />} />
-          <Route path="/myprofile" exact component={Profile} />
+              enemiesList={enemiesList}
+              updateEnemiesList={this.updateEnemiesList}
+              getEnemyLoot={this.getEnemyLoot}
+            />}
+          />
+          <Route path="/myprofile" exact render={(props) => 
+            <Profile {...props}
+              userInfos={userInfos}
+            />}
+          />
           <Route path="/mycandydex" exact render={(props) =>
             <Dex {...props}
               userInfos={userInfos}

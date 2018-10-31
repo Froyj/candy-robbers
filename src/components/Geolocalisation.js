@@ -23,7 +23,7 @@ class Geolocalisation extends Component {
           error,
           getCurrentPosition
         }) => {
-          const { pumpkinsList, updatePumpkinsList, getLoot } = this.props;
+          const { pumpkinsList, updatePumpkinsList, getLoot, enemiesList, updateEnemiesList, getEnemyLoot } = this.props;
           const isUserLocated = latitude && longitude;
           const userPosition = isUserLocated ? [latitude, longitude] : [];
           console.log(userPosition)
@@ -36,6 +36,9 @@ class Geolocalisation extends Component {
                 pumpkinsList={pumpkinsList}
                 updatePumpkinsList={updatePumpkinsList}
                 getLoot={getLoot}
+                enemiesList={enemiesList}
+                updateEnemiesList={updateEnemiesList}
+                getEnemyLoot={getEnemyLoot}
               />
             </div>
           );

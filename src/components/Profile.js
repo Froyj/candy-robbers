@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 class Profile extends Component {
 
   render() {
+    const { userInfos } = this.props;
     return (
       <Container>
         <div className="user-infos mt-4">
@@ -32,7 +33,7 @@ class Profile extends Component {
                   <p className="taille-typo text-center">Maître des friandises</p>
                 </Col>
                 <Col xs="12">
-                  <p className="taille-typo text-center">Points : <span style={{ color: 'orangered' }}>587 pts</span></p>
+                  <p className="taille-typo text-center">Points : <span style={{ color: 'orangered' }}>{userInfos.points} points</span></p>
                 </Col>
                 <Col xs="12">
                   <NavItem style={{listStyle: 'none'}}>
