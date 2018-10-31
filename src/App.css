@@ -19,7 +19,7 @@ div.container-fluid {
   margin : 0;
 }
 
-a.style-bouton {
+.style-bouton {
   color: orangered;
   font-weight: bold;
   font-size: 2.5rem;
@@ -28,10 +28,6 @@ a.style-bouton {
   padding: 10px 20px;
   border: 1px solid orangered;
 }
-.hover a.style-bouton. {
-  color: orangered;
-}
-
 p.wlcwrapper {
   text-align: center;
 }
@@ -46,7 +42,6 @@ p.wlcwrapper {
   top: 90%;
   left: 50%
 }
-.hover
 
 /*Menu*/
 .navbar {
