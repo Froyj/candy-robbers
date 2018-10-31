@@ -36,14 +36,14 @@ class Profile extends Component {
                 </Col>
                 <Col xs="12">
                   <NavItem style={{listStyle: 'none'}}>
-                    <NavLink to="/mycandydex" tag={Link} className="text-center" style={{ color: 'orangered' }}>Voir mon candydex</NavLink>
+                    <NavLink to="/mycandydex" tag={Link} className="text-center" style={{ color: 'orangered', textDecoration: 'underline' }}>Voir mon candydex</NavLink>
                   </NavItem>
                 </Col>
               </Row>
             </Col>
           </Row>
         </div>
-        <Row>
+        {/* <Row>
           <Col xs="12">
             <div className="distinctions">
               <h2 className="text-center mb-3">Distinctions</h2>
@@ -59,7 +59,7 @@ class Profile extends Component {
               </p>
             </div>
           </Col>
-        </Row>
+        </Row> */}
 
       </Container>
     );

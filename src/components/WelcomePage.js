@@ -16,7 +16,7 @@ class WelcomePage extends Component {
   render() {
     
     return (
-      <div>
+      <div className="image-fond">
         <img style={{position: 'fixed', height: 'calc(100vh - 90px)', zIndex: '0'}} src={halloweenIllustration} alt="Halloween" />
         <div className="position-bouton">
           <Button onClick={this.startScream}
