@@ -9,7 +9,7 @@ const WelcomePage = () => {
     <div>
       <img style={{position: 'fixed', height: 'calc(100vh - 90px)', zIndex: '0'}} src={halloweenIllustration} alt="Halloween" />
       <div className="position-bouton">
-        <Button to="/map" tag={Link} size="lg" className="wlcbutton" >TOC TOC TOC</Button>
+        <Button to="/map" tag={Link} size="lg" className="style-bouton" >TOC TOC TOC</Button>
       </div>
     </div>
   );
