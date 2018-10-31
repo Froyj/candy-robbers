@@ -1,6 +1,6 @@
 .dex-titre {
     font-family: 'Creepster', cursive;
-    font-size: 30px;
+    font-size: 26px;
     color: white;
     text-align: center;
 }
@@ -14,4 +14,30 @@
 .barre {
     color: white;
     text-align: center;
+}
+
+.image-bonbon {
+    width: 13vw;
+}
+
+.image-check {
+    width: 6vw;
+}
+
+@media screen and (min-width: 845px){
+    .dex-titre {
+        font-size: 50px;
+    }
+    .bonbon-nom {
+        font-size: 3vw;
+    }
+    .image-bonbon {
+        width: 5vw;
+        margin-left: 60px;
+    }
+    
+    .image-check {
+        width: 3vw;
+        margin-left: 120px;
+    }
 }

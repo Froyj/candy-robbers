@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+  NavItem,
+  NavLink,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import '../css/Modal.css'
 
 class LootModal extends Component {
 
@@ -7,11 +13,14 @@ class LootModal extends Component {
 
     if (lootAlert === 'ok') {
       return (
-        <div className="modal show modal-loot" tabIndex="-1" role="dialog">
+        <div className="modal show modal-loot modal-style text-center" tabIndex="-1" role="dialog">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body text-center">
-                <p>Bravo, vous avez gagné une récompense</p>
+                <p style={{ fontSize: '22px', marginBottom: '-5px' }}>Bravo ! Vous avez gagné une récompense <span role="img" aria-label="sheep">👻</span></p>
+                <NavItem style={{ listStyle: 'none' }}>
+                  <NavLink to="/mycandydex" tag={Link} className="text-center" style={{ color: 'orangered', fontSize: '15px' }}>Voir mon candydex</NavLink>
+                </NavItem>
                 <button type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
               </div>
             </div>
@@ -22,11 +31,11 @@ class LootModal extends Component {
 
     if (lootAlert === 'trop loin') {
       return (
-        <div className="modal show modal-loot" tabIndex="-1" role="dialog">
+        <div className="modal show modal-loot modal-style text-center" tabIndex="-1" role="dialog">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-body">
-                <p>Vous êtes trop loin pour recuperer cette récompense</p>
+                <p style={{ fontSize: '22px' }}>Vous êtes trop loin pour récupérer cette récompense <span role="img" aria-label="sheep">👹</span></p>
                 <button type="button" data-dismiss="modal" onClick={clearLootAlert}>Fermer</button>
               </div>
             </div>
@@ -37,4 +46,4 @@ class LootModal extends Component {
   }
 }
 
-  export default LootModal;
+export default LootModal;

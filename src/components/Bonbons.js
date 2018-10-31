@@ -9,13 +9,13 @@ class Bonbons extends Component {
       <div style={{ backgroundColor: "orange" }}>
         <div className="row d-flex align-items-center my-2 py-2">
           <div className="col-2 ml-1">
-            <img style={{ width: '13vw' }} src={this.props.image} alt={this.props.nom} />
+            <img className="image-bonbon" src={this.props.image} alt={this.props.nom} />
           </div>
           <div className="col-7 bonbon-nom ml-1">
             <span>{this.props.nom}</span>
           </div>
           <div className="col ml-2">
-            <img style={{ width: '6vw' }} src={this.props.isIncluded ? checkON : checkOFF} alt="CHECK!" />
+            <img className="image-check" src={this.props.isIncluded ? checkON : checkOFF} alt="CHECK!" />
           </div>
         </div>
       </div>
